@@ -10,9 +10,6 @@ const Result = () => {
   const [{ term }, dispatch] = useContextValue();
   const { data } = useGoogleSearch(term);
 
-  // const data = Response;
-  // console.log(data);
-
   return (
     <div className="searchPage">
       <div className="searchPage-header">

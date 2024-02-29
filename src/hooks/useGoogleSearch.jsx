@@ -9,7 +9,7 @@ const useGoogleSearch = (term) => {
       `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${term}`
     );
     const result = await data.json();
-    console.log(result);
+   
     setData(result);
   };
 
