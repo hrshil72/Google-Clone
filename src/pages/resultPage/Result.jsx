@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import "./Result.css";
+import { useContextValue } from "../../context/Context";
 
 const Result = () => {
-  return (
-    <div>Result</div>
-  )
-}
+  const [{ term }, dispatch] = useContextValue();
 
-export default Result
+  return (
+    <div className="searchPage">
+      <div className="searchPage-header">
+        <h1>{term}</h1>
+      </div>
+      <div className="searchPage-results"></div>
+    </div>
+  );
+};
+
+export default Result;
