@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useContextValue } from "../context/Context";
 import { actionTypes } from "../context/Reducer";
 
-const SearchBar = () => {
+const SearchBar = ({ hideButtons = false }) => {
   let [{}, dispatch] = useContextValue();
 
   let [input, setInput] = useState("");
@@ -16,14 +16,15 @@ const SearchBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setInput("");
 
     dispatch({
       type: actionTypes.SET_SEARCH_TERM,
       term: input,
     });
 
-    navigate("/result");
+    {
+      input === "" ? null : navigate("/result");
+    }
   };
 
   return (
@@ -40,12 +41,22 @@ const SearchBar = () => {
           <CameraAltIcon />
         </div>
       </div>
-      <div className="buttons-container">
-        <Button type="submit" onClick={handleSearch} variant="outlined">
-          Google Search
-        </Button>
-        <Button variant="outlined">I'm Feeling Lucky</Button>
-      </div>
+
+      {hideButtons ? (
+        <div className="buttons-container hide-buttons">
+          <Button type="submit" onClick={handleSearch} variant="outlined">
+            Google Search
+          </Button>
+          <Button variant="outlined">I'm Feeling Lucky</Button>
+        </div>
+      ) : (
+        <div className="buttons-container ">
+          <Button type="submit" onClick={handleSearch} variant="outlined">
+            Google Search
+          </Button>
+          <Button variant="outlined">I'm Feeling Lucky</Button>
+        </div>
+      )}
     </form>
   );
 };
