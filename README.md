@@ -1,6 +1,6 @@
 # Google Search Engine Clone
 
-![Project Demo](link-to-project-demo-gif-or-screenshot)
+![Project Demo](https://i.ibb.co/Gt25bC5/Screenshot-2024-02-29-234230.png)
 
 ## Overview
 
