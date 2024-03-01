@@ -23,13 +23,13 @@ Check out the live demo: [Google Search Engine Clone](https://google-engine-clon
 - Material UI
 - Firebase
 
-## How to Run Locally
+## How to Run Locally with Vite
 
 1. Clone the repository
 2. Navigate to the project directory
 3. Run `npm install` to install dependencies
-4. Run `npm start` to start the development server
-5. Open your browser and visit `http://localhost:3000`
+4. Run `npm run dev` to start the Vite development server
+5. Open your browser and visit `http://localhost:5173`
 
 ## Contributing
 
